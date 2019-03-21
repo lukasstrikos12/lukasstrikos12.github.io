@@ -1,61 +1,96 @@
-body{
-  background: #c4c7cb;
-  background-image: -webkit-radial-gradient(cover, #FFF,#D1D1D1	);
-  background-image: -moz-radial-gradient(cover, #e8eaec, #a4a8ae);
-  background-image: -o-radial-gradient(cover, #e8eaec, #a4a8ae);
-  background-image: radial-gradient(cover, #e8eaec, #a4a8ae)
+/**
+ * Skyrim-inspired Menu
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+html {
+	background: #333 url(http://subtlepatterns.com/patterns/tex2res4.png) 0 0 repeat;
+	min-height: 100%;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+	color: #FFF;
 }
 
-html{
-  min-height:100%;
-}
-
-.Navigation{
-	height: 50px;
-    padding: 0;
+body, html {
+	height: 100%;
 	margin: 0;
-	position: absolute;
-}
-
-.Navigation li 	{
-	height: auto;
-	width: 150px;
-	float: left;
-	text-align: center;
-	list-style: none;
-	font:12px "Bonveno", "Century Gothic";
 	padding: 0;
+}
+
+a {
+	color: rgba(255, 255, 255, 0.6);
+	text-decoration: none;
+}
+
+	a:hover, li:hover > a {
+		color: #FFF;
+	}
+
+ul {
+	list-style-type: none;
 	margin: 0;
-	background-color: #eee;
-	border: 1px solid #ccc;
-	box-shadow: 0 1px 0 rgba(255,255,255, .9) inset, 0 1px 3px rgba(0,0,0, .1);
-	border-radius: 3px;
-  margin-left:10px;
+	padding: 0;
 }
 
-.Navigation a{							
-	padding:13px;
-	text-decoration: none; 
-	color:#333;
-	text-shadow: 0 1px #fff;
+li {
+	margin: 0;
+	padding: 0;
+}
+
+#menu {
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #FFF;
+	background: rgba(0, 0, 0, 0.5);
+	float: left;
+	font-size: 1.5em;
+	min-height: 100%;
+	margin-left: 1em;
+}
+
+#menu li {
+	position: relative;
+	z-index: 1;
+}
+
+#menu li a {
 	display: block;
-}
-.Navigation li ul{
-	display: none;
-	height: auto;									
-	margin-left: -11px;
-	padding: 0;		
-}				
-
-.Navigation li:hover ul{
-	display: block;
+	padding: 0.5em 1em;
+	white-space: nowrap;
 }
 
-.navbar li ul li {
-	background-color:#eee;
-  	border: 1px solid #ccc;
-} 
-
-.Navigation li:hover, a:hover {
-	 background: #e8e8e8;
-} 
+	#menu li ul {
+		position: absolute;
+		overflow: hidden;
+		display: none;
+		left: 100%;
+		top: 0.5em;
+		float: none;
+		background-image: -moz-radial-gradient(0 50%, ellipse  farthest-side, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 33%, rgba(0,0,0,0) 100%);
+		background-image: -webkit-radial-gradient(0 50%, ellipse  farthest-side, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 33%, rgba(0,0,0,0) 100%);
+		background-image: radial-gradient(0 50%, ellipse  farthest-side, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 33%, rgba(0,0,0,0) 100%);
+	}
+	
+	#menu li:hover ul {
+		display: block;
+	}
+	
+	#menu li ul a {
+		position: relative;
+		font-size: 0.8em;
+	}
+	
+	#menu li ul a:hover:before {
+		content: "";
+		display: block;
+		width: 1em;
+		height: 1em;
+		background: rgba(0,0,0,0.75);
+		border: 1px solid #FFF;
+		position: absolute;
+		top: 0.5em;
+		left: -0.75em;
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
