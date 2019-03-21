@@ -1,4 +1,9 @@
- 
+ /**
+ * Skyrim-inspired Menu
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
 html {
 	background: #333 url(http://subtlepatterns.com/patterns/tex2res4.png) 0 0 repeat;
 	min-height: 100%;
