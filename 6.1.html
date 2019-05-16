@@ -1,0 +1,22 @@
+<html> 
+<head> 
+<link rel="stylesheet" href="style.css"> 
+<script> 
+function func1() { 
+var n; 
+var s=0; 
+do{ 
+n= Number(prompt('Введите n', 69)); 
+s=s+n; 
+} 
+while (n!=0) 
+document.getElementById("otvet1").innerHTML = document.getElementById("otvet1").innerHTML + s +"<br>"; 
+} 
+</script> 
+<body>
+  <br>
+     <h1>Цикл 6.1</h1> 
+    <a href="#" onclick="func1()" class="button yellow text-blanco text-shadow-negra">♂</a>
+    <div id="otvet1"></div>
+</body>
+</html>
